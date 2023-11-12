@@ -1,4 +1,4 @@
 # Portfolio-Website
 An online portfolio website showcasing personal projects and providing efficient communication tools for potential employers.
 
-<img src="read-me.png" alt='picture of portfolio'></img>
+<a href='https://trevarious.github.io/Portfolio-Website/'><img src="read-me.png" alt='picture of portfolio'></img></a>

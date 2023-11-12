@@ -42,14 +42,14 @@ h1, h2, h3, p{
     align-items: center;
     height: 100vh;
     border-collapse: collapse;
-    border-radius: 9px 9px 0 0 ;
+    border-radius: 12px 12zpx 0 0 ;
     z-index: 2000;
 }
 .container{
     width: 100%;
     height: 100%;
     background-color: rgb(247, 246, 246);
-    border-radius: 9px 9px 0 0 ;
+    border-radius: 12px 12px 0 0 ;
     border: 6px solid rgb(246, 247, 253);
     display: inline-flex;
     z-index: 200;
@@ -325,4 +325,100 @@ h1, h2, h3, p{
 #confirmation-message button:hover {
     background: white;
     color: rgb(0, 255, 255);
+}
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .shell {
+        padding: 20px;
+    }
+
+    .container {
+        border: none;
+    }
+
+    .left-nav {
+        width: 100%;
+        border-right: none;
+        text-align: center;
+    }
+
+    #logo {
+        margin: 10px;
+    }
+
+    .left-nav-social-links {
+        margin-bottom: 20px;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top-nav-left,
+    .top-nav-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .top-nav-right ul {
+        justify-content: center;
+    }
+
+    .top-nav-right li {
+        padding-right: 10px;
+    }
+
+    .content {
+        margin: 0;
+    }
+
+    .content h1,
+    .content h2,
+    .content p {
+        margin: 0 10px;
+    }
+
+    .content p {
+        max-width: 100%;
+    }
+
+    .btn-container {
+        margin: 0;
+    }
+
+    #image-main{
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .image {
+        border-radius: 0;
+        overflow: hidden; /* Ensures the image doesn't overflow its container */
+        
+    }
+
+    .content-flex,
+    .main-content {
+        flex-direction: column;
+    }
+
+    #contact-form,
+    #confirmation-message {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1210px){
+    #image-main {
+        width: 100%;
+    }
 }
