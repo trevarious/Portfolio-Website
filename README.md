@@ -4,3 +4,5 @@ An online portfolio website showcasing personal projects and providing efficient
 <a href='https://trevarious.github.io/Portfolio-Website/' target='_blank' rel='noopener noreferrer'>
   <img src="read-me.png" alt='picture of portfolio'>
 </a>
+
+<a href='https://trevarious.github.io/Portfolio-Website/'>link to portfolio</a>
