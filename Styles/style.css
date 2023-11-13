@@ -42,7 +42,7 @@ h1, h2, h3, p{
     align-items: center;
     height: 100vh;
     border-collapse: collapse;
-    border-radius: 12px 12zpx 0 0 ;
+    border-radius: 12px 12px 0 0 ;
     z-index: 2000;
 }
 .container{
@@ -422,3 +422,133 @@ h1, h2, h3, p{
         width: 100%;
     }
 }
+/* Media Query for Small Screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    .shell {
+        padding: 10px;
+    }
+
+    .left-nav {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-right: .1px solid black;
+    }
+
+    #logo {
+        margin: 0;
+        padding: 10px;
+    }
+
+
+    .social-links {
+        margin-bottom: 10px;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .top-nav-left,
+    .top-nav-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .top-nav-right ul {
+        justify-content: center;
+    }
+
+    .top-nav-right li {
+        padding-right: 10px;
+        font-size: 1rem;
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content h1 {
+        flex: 1;
+        margin: 0;
+        font-family: 'Exo 2', sans-serif;
+        font-size: 3rem;
+        color: rgb(70, 70, 70);
+    }
+
+    .sykes {
+        margin-left: 25px;
+        margin-bottom: 0;
+    }
+
+    .content h2 {
+        flex: 1;
+        margin: 0;
+        color: rgb(119, 119, 119);
+        font-family: 'Montserrat', sans-serif;
+        padding: 0;
+        max-width: 100px;
+    }
+
+    .content p {
+        flex: 1;
+        margin: 0;
+        max-width: 75%;
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        color: rgb(0, 0, 0);
+    }
+
+    .btn-container,
+    #cta {
+        display: none;
+        margin: 0;
+    }
+
+    #image-main {
+        border-radius: 50%;
+        padding: 0;
+    }
+
+    .image {
+        border-radius: 3%;
+        padding: 0;
+    }
+
+    .content-flex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact-form,
+    #confirmation-message {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        left: 0;
+    }
+}
+
