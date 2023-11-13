@@ -1,0 +1,12 @@
+[submodule "Barter"]
+	path = Barter
+	url = https://github.com/trevarious/Barter-Up.git
+[submodule "Crypto"]
+	path = Crypto
+	url = https://github.com/trevarious/Crypto-Scope.git
+[submodule "Candle"]
+	path = Candle
+	url = https://github.com/trevarious/The-Candle-Shop.git
+[submodule "Conway"]
+	path = Conway
+	url = https://github.com/trevarious/Conways-Game-Of-Life.git
