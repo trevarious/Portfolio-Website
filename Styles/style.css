@@ -440,15 +440,21 @@ h1, h2, h3, p{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         border-right: .1px solid black;
+        padding: 10px 5px 0 5px;
+
     }
 
     #logo {
-        margin: 0;
-        padding: 10px;
-        position: absolute;
-        top: 0;
+       margin: 0;
+    }
+    .left-nav-social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center the links vertically */
+        flex: 1; /* Allow the links to take up remaining vertical space */
     }
 
 
@@ -459,12 +465,9 @@ h1, h2, h3, p{
     .top-nav {
         flex-direction: column;
         height: auto;
-        padding: 10px;
+        padding: 10px 0 0 0;
     }
 
-    .top-nav-email{
-        display: none;
-    }
     #night-mode-toggle{
         display: none;
     }

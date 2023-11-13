@@ -308,4 +308,171 @@ li{
     cursor: pointer;
 }
 
+@media only screen and (max-width: 480px) {
+    .shell {
+        padding: 0;
+    }
+    .container{
+        width: 100%;
+    }
+
+    .left-nav {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-right: .1px solid black;
+        padding: 10px 5px 0 5px;
+
+    }
+
+    #logo {
+       margin: 0;
+    }
+
+    .left-nav-social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center the links vertically */
+        flex: 1; /* Allow the links to take up remaining vertical space */
+    }
+
+
+    .social-links {
+        margin-bottom: 10px;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0 0 0;
+    }
+
+    #night-mode-toggle{
+        display: none;
+    }
+    .top-nav-left{
+        padding: 10px 0 0 0;
+    }
+    .top-nav-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .top-nav-right h3{
+        font-size: .95rem;
+    }
+
+    .top-nav-right ul {
+        justify-content: center;
+    }
+
+    .top-nav-right li {
+        padding-right: 10px;
+        font-size: 1rem;
+    }
+
+    .main-content {
+        display: block;
+        align-items: center;
+    }
+
+    .content {
+        display: block;
+        margin: 0;
+        align-items: center;
+    }
+
+    .content h1{
+        margin: 10px 0 0 0 ;
+        font-family: 'Exo 2', sans-serif;
+        font-size: 3rem;
+        color: rgb(70, 70, 70);
+        padding: 0;
+    
+    }
+    
+    .content p{
+        margin: 5px 0 20px 0;
+        font-size: calc(1.75rem - 1.25vh);
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+        color: rgb(255, 0, 0);
+        padding: 0;
+    }
+
+
+    .content-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .works {
+        padding: 0;
+        margin: 0 0 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: auto; /* Add overflow to enable scrolling if needed */
+        max-height: auto;
+        border-radius: 3%;
+       background: black;
+    }
+    .work-item {
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        width: 200px;
+        box-sizing: border-box;
+        position: relative;
+        margin: 5px;
+        overflow: hidden;
+        background: linear-gradient(rgba(0, 255, 255, 0.2), white 99%, rgba(255, 0, 0, 0.1));
+        border: 2px solid transparent;
+        transition: border-color .25s ease;
+        border-radius: 3%;
+        padding: 10px 0 10px 0;
+        cursor: pointer;
+        height: 200px;
+    }
+    
+    .work-item a {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .works img {
+        width: 100%;
+    }
+    
+    .work-item:hover {
+        animation: rotateBorder 2s linear infinite .05s; /* Add a 2s delay to the animation */
+        border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255); /* Set the final border color here */
+        scale: 1.01
+    }
+    .works a{
+        text-decoration: none;
+        color: grey;
+        font-size: 10px;
+    }
+    .project-description {
+        text-decoration: none;
+        background-color: #eee;
+        visibility: hidden; /* Initially hide the project descriptions */
+        transition: visibility .1s ease;
+        border-radius: 3%;
+        cursor: pointer;
+    }
+
+}
+
 
