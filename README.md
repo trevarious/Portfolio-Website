@@ -5,4 +5,3 @@ An online portfolio website showcasing personal projects and providing efficient
   <img src="read-me.png" alt='picture of portfolio'>
 </a>
 
-<a href='https://trevarious.github.io/Portfolio-Website/'>link to portfolio</a>
