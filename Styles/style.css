@@ -425,7 +425,10 @@ h1, h2, h3, p{
 /* Media Query for Small Screens (max-width: 480px) */
 @media only screen and (max-width: 480px) {
     .shell {
-        padding: 10px;
+        padding: 0;
+    }
+    .container{
+        width: 100%;
     }
 
     .left-nav {
@@ -454,6 +457,13 @@ h1, h2, h3, p{
         padding: 10px;
     }
 
+    .top-nav-email{
+        display: none;
+    }
+    #night-mode-toggle{
+        display: none;
+    }
+
     .top-nav-left,
     .top-nav-right {
         flex: none;
@@ -461,6 +471,9 @@ h1, h2, h3, p{
         text-align: center;
         justify-content: center;
         padding: 10px;
+    }
+    .top-nav-right h3{
+        font-size: .95rem;
     }
 
     .top-nav-right ul {
@@ -492,7 +505,7 @@ h1, h2, h3, p{
         flex: 1;
         margin: 0;
         font-family: 'Exo 2', sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         color: rgb(70, 70, 70);
     }
 
