@@ -24,8 +24,6 @@ const backgroundColorChange = () => {
 
     return `rgba(${r}, ${g}, ${b}, .1)`;
 }
-
-
 function showContactForm() {
     document.getElementById("cta").style.display = "none";
     document.getElementById("contact-form").style.display = "block";
@@ -35,18 +33,19 @@ function sendEmail(event) {
     event.preventDefault(); // Prevent the form from submitting
 
     // Replace 'your-email@example.com' with your actual email address
-    const toEmail = 'your-email@example.com';
+    const toEmail = 'trevorjacobsykes@gmail.com';
 
     const senderName = document.getElementById("sender-name").value;
     const senderEmail = document.getElementById("sender-email").value;
     const message = document.getElementById("message").value;
 
-    // You can use a service like Email.js or a server script to send the email
-    // For simplicity, we'll use a JavaScript alert for demonstration purposes
+    // Alert users that the following action is for demonstration purposes only
     alert(`Sending message:
     Name: ${senderName}
     Email: ${senderEmail}
-    Message: ${message}`);
+    Message: ${message}
+    
+    Note: This functionality is currently in demonstration mode. To send an actual message, please use the designated mail icon. Thank you!`);
 
     document.getElementById("contact-form").style.display = "none";
     document.getElementById("confirmation-message").style.display = "block";
@@ -57,6 +56,3 @@ function returnToHome() {
 }
 
 document.getElementById("contact-form").addEventListener("submit", sendEmail);
-
-
-
