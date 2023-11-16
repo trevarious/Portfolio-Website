@@ -101,17 +101,27 @@ h1, h2, h3, p{
     display: flex;
     margin-bottom: 250px;
 }
+.left-nav-link-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
 .social-links{
-    margin-bottom: 30px;
     display: flex;
     width: 30px;
     height: 30px;
-    transition: scale .05s ease;
+    transition: scale .05s ease, opacity .05s ease;
     border: none;
+    opacity: 0.75;
 }
 
 .social-links:hover{
-    scale: 1.2;
+    scale: .9;
+    opacity: 1;
 }
 .main-content {
     flex: 1;
@@ -584,3 +594,10 @@ h1, h2, h3, p{
     }
 }
 
+@media only screen and (max-width: 325px) {
+    
+    .top-nav-email{
+        display: none;
+    }
+
+}

@@ -416,7 +416,7 @@ li{
     }
     .works {
         padding: 0;
-        margin: 0 0 0 10px;
+        margin: 50px 0 0 5px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -430,7 +430,7 @@ li{
         justify-content: center;
         align-items: center;
         flex: 1;
-        width: 200px;
+        width: 150px;
         box-sizing: border-box;
         position: relative;
         margin: 5px;
@@ -439,9 +439,9 @@ li{
         border: 2px solid transparent;
         transition: border-color .25s ease;
         border-radius: 3%;
-        padding: 10px 0 10px 0;
+        padding: 5px 0 5px 0;
         cursor: pointer;
-        height: 200px;
+        height: 150px;
     }
     
     .work-item a {
@@ -462,17 +462,22 @@ li{
     .works a{
         text-decoration: none;
         color: grey;
-        font-size: 10px;
+        font-size: 5px;
     }
     .project-description {
         text-decoration: none;
         background-color: #eee;
-        visibility: hidden; /* Initially hide the project descriptions */
+        visibility: visible; /* Initially hide the project descriptions */
         transition: visibility .1s ease;
         border-radius: 3%;
         cursor: pointer;
     }
 
 }
+@media only screen and (max-width: 325px) {
+    
+    .top-nav-email{
+        display: none;
+    }
 
-
+}
