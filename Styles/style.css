@@ -65,10 +65,14 @@ h1, h2, h3, p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-right: .1px solid black;
 }
 
+#night-mode-toggle{
+    display: none;
+
+}
 #logo{
     margin: 20px;
     transition: transform 3s ease, animation 1s ease;
@@ -96,10 +100,11 @@ h1, h2, h3, p{
 }
 
 .left-nav-social-links{
+    flex: 1;
     flex-direction: column;
     align-items: center;
     display: flex;
-    margin-bottom: 250px;
+    justify-content: center;
 }
 .left-nav-link-container{
     display: flex;
@@ -116,7 +121,7 @@ h1, h2, h3, p{
     height: 30px;
     transition: scale .05s ease, opacity .05s ease;
     border: none;
-    opacity: 0.75;
+    opacity: 0.95;
 }
 
 .social-links:hover{
@@ -230,9 +235,7 @@ h1, h2, h3, p{
     margin: 0 0 0 250px;
 
 }
-.btn-container:active{
-    background: rgb(255, 159, 159);
-}
+
 #cta{
     border: none;
     border-radius: 50%;
@@ -243,10 +246,8 @@ h1, h2, h3, p{
     color: rgb(249, 247, 247);
     cursor: pointer;
     margin: 0 0 0 0;
+    z-index: 1000;
 
-}
-#cta:active{
-    background: rgb(255, 78, 78);
 }
 
 
@@ -469,6 +470,15 @@ h1, h2, h3, p{
 
 
     .social-links {
+        margin-bottom: 0;
+    }
+    .left-nav-link-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
         margin-bottom: 10px;
     }
 
@@ -594,10 +604,13 @@ h1, h2, h3, p{
     }
 }
 
-@media only screen and (max-width: 325px) {
+@media only screen and (max-width: 390px) {
     
     .top-nav-email{
         display: none;
+    }
+    .top-nav{
+        border-bottom: .5px solid black;
     }
 
 }
