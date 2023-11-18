@@ -609,8 +609,5 @@ h1, h2, h3, p{
     .top-nav-email{
         display: none;
     }
-    .top-nav{
-        border-bottom: .5px solid black;
-    }
 
 }
