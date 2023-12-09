@@ -9,6 +9,7 @@
     <title>Trevor Sykes | Digital Creator</title>
 </head>
 <body>
+
     <div class="shell">
     <div id="container" class="container">
         <div class="left-nav">
@@ -60,35 +61,19 @@
                 Web Developer with expertise in HTML, CSS, JavaScript, and React. 
                 Passionate about building user-friendly interfaces and crafting seamless user experiences.
             </p>
-            <div class="btn-container">
-                <button id="cta" onclick="showContactForm()"><span class="lets">let's</span><br><span class="talk">talk</span></button>
+            <h2 class="skills">My Skills</h2>
+            <div class="stack-container">
+                <div class="stack one">HTML</div>
+                <div class="stack two">CSS</div>
+                <div class="stack three">JavaScript</div>
+                <div class="stack four">React</div>
+                <div class="stack five">Solidity</div>
                 </div>
         </div>
         <div class="image"><img id="image-main" src="assets/mugshotremovedbackground.png" alt=""></div>
         </div>
-        <form id="contact-form" style="display: none;">
-            <label for="sender-name">Name:</label>
-            <input type="text" id="sender-name" required>
-    
-            <label for="sender-email">Email:</label>
-            <input type="email" id="sender-email" required>
-    
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-    
-            <button type="submit">Send</button>
-        </form>
-    
-        <div id="confirmation-message" style="display: none;">
-            <p>Message sent. Thank you!</p>
-            <button onclick="returnToHome()">Back to Home</button>
-        </div>
-
         </div>
         </div>
     </div>
-    <div id="overlay"></div>
-    <script src="Scripts/script.js" ></script>
-    <script src="Scripts/linksbackground.js"></script>
 </body>
 </html>
