@@ -14,10 +14,13 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background: radial-gradient(rgb(116, 116, 116) , #f5f5f5);
+    background: rgb(76, 76, 76);
+    animation: load-body 300ms ease-out var(--load-time);
+    animation-fill-mode: forwards;
     overflow-y: hidden;
     overflow-x: hidden;
     color: grey;
+    --load-time: 150ms;
 }
 ul{
     list-style: none;
@@ -66,7 +69,8 @@ h1, h2, h3, p{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-right: .1px solid black;
+    border-right: 1px solid transparent;
+
 }
 
 #night-mode-toggle{
@@ -75,29 +79,75 @@ h1, h2, h3, p{
 }
 #logo{
     margin: 20px;
-    transition: transform 3s ease, animation 1s ease;
+    animation: logo-load 150ms, load 300ms;
+    animation-fill-mode: forwards;
+    transform: rotate(-180deg);
 
 }
-#logo:hover{
-     animation: logoSpin 2s linear infinite;
-}
-@keyframes logoSpin{
-    0%{
-        transform: rotateY(15deg);
+@keyframes logo-load {
+    0% {
+        transform: rotate(-180deg);
     }
-    25%{
-        transform: rotateY(30deg);
-    }
-    50%{
-        transform: rotateY(45deg);
-    }
-    75%{
-        transform: rotateY(30deg);
-    }
-    100%{
-        transform: rotateY(15deg);
+
+    100% {
+        transform: rotate(0);
     }
 }
+
+@keyframes load{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes load-body {
+    0% {
+        background: rgb(76, 76, 76);
+    }
+    100% {
+        background: rgb(187, 187, 187);
+
+    }
+}
+
+@keyframes top-right-nav-load {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes top-left-nav-load {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes left-nav {
+    0% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes content-scale {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
 
 .left-nav-social-links{
     flex: 1;
@@ -114,6 +164,9 @@ h1, h2, h3, p{
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
+    animation: left-nav 300ms;
+    animation-fill-mode: forwards;
+    transform: rotate((-360deg));
 }
 .social-links{
     display: flex;
@@ -139,8 +192,13 @@ h1, h2, h3, p{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 100px;
+    animation: load 300ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(-10%);
 }
 .top-nav-left{
     flex: 1;
@@ -148,6 +206,9 @@ h1, h2, h3, p{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    animation: top-left-nav-load 300ms var(--load-time);
+    animation-fill-mode: forwards;
+    transform: translateX(-10%);
 
 }
 .top-nav-right{
@@ -158,6 +219,24 @@ h1, h2, h3, p{
     justify-content: flex-end;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -1px;
+    flex-wrap: wrap;
+    animation-fill-mode: forwards;
+    transform: translateY(-10%);
+}
+#works{
+    animation: top-right-nav-load 300ms calc(var(--load-time));
+    animation-fill-mode: forwards;
+    transform: translateY(-10%);
+}
+#resume{
+    animation: top-right-nav-load 300ms calc(var(--load-time) + 150ms);
+    animation-fill-mode: forwards;
+    transform: translateY(-10%);
+}
+#home{
+    animation: top-right-nav-load 300ms calc(var(--load-time) + 300ms);
+    animation-fill-mode: forwards;
+    transform: translateY(-10%);
 }
 .top-nav-right h3{
     cursor: default;
@@ -180,8 +259,10 @@ h1, h2, h3, p{
     padding: 0;
     margin: 0;
     padding-right: 30px;
-
+    
 }
+
+
 .top-nav-link{
     width: 25px;
     height: 25px;
@@ -192,10 +273,15 @@ h1, h2, h3, p{
     margin: 0 30px 0 5px;
     font-family: 'Calistoga', serif;
 }
+
+
 .content {
     flex: 1; /* Takes up remaining space */
     justify-content: center;
     align-items: center;
+    animation: load 300ms ease-in-out calc(var(--load-time));
+    animation-fill-mode: forwards;
+    opacity: 0;
 
 }
 .content h1{
@@ -255,6 +341,9 @@ h1, h2, h3, p{
 #image-main{
     height: auto;
     border-radius: 50%;
+    animation: content-scale 300ms calc(var(--load-time));
+    animation-fill-mode: forwards;
+    scale: 0;
 }
 
 .image{
@@ -340,6 +429,13 @@ h1, h2, h3, p{
     background: white;
     color: rgb(0, 255, 255);
 }
+
+.works{
+    animation: content-scale 300ms ease-out calc(var(--load-time));
+    animation-fill-mode: forwards;
+    scale: 0;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
@@ -452,7 +548,6 @@ h1, h2, h3, p{
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        border-right: .1px solid black;
         padding: 10px 5px 0 5px;
 
     }

@@ -259,9 +259,10 @@ h1, h2, h3, p{
     overflow: auto; /* Add overflow to enable scrolling if needed */
     max-height: 500px;
     border-radius: 3%;
-   background: black;
    margin-right: 25px;
+   background: transparent;
 }
+
 
 .work-item {
     justify-content: center;
