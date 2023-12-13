@@ -1,37 +1,113 @@
-
-.content-resume {
+.skill-bars {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Takes up remaining space */
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
-
-
-#resume-card{
-    transition: border-color .25s ease;
-    width: 400px;
-    height: 550px;  
-    border-radius: 1%;
-    border: 1px solid black;
-    transition: scale 1s ease, transform 1s ease;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.393);
-
-    animation: resume-load 300ms 150ms;
-    animation-fill-mode: forwards;
-    scale: 0;
-
-}
-.image{
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+.skill {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    position: relative;
+}
+
+#htmlProgress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    width: 90%; /* Adjust this value for HTML proficiency */
+    animation: fillHTML 2s ease-in-out forwards; /* Animation for HTML filling */
+}
+
+#cssProgress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    width: 85%; /* Adjust this value for CSS proficiency */
+    animation: fillCSS 2s ease-in-out forwards; /* Animation for CSS filling */
+}
+#javaScriptProgress {
+    height: 100%;
+    background-color: #4caf40;
+    border-radius: 5px;
+    width: 90%; /* Adjust this value for HTML proficiency */
+    animation: fillJAVASCRIPT 2s ease-in-out forwards; /* Animation for HTML filling */
+}
+
+#reactProgress {
+    height: 100%;
+    background-color: #4caf30;
+    border-radius: 5px;
+    width: 85%; /* Adjust this value for CSS proficiency */
+    animation: fillREACT 2s ease-in-out forwards; /* Animation for CSS filling */
+}
+#solidityProgress {
+    height: 100%;
+    background-color: #4caf20;
+    border-radius: 5px;
+    width: 85%; /* Adjust this value for CSS proficiency */
+    animation: fillSOLIDITY 2s ease-in-out forwards; /* Animation for CSS filling */
+}
+.skill-level {
+    margin-top: 5px;
 }
 
 
+@keyframes fillHTML {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 95%; /* Adjust this value for HTML proficiency */
+    }
+}
 
+@keyframes fillCSS {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 95%; /* Adjust this value for CSS proficiency */
+    }
+}
+@keyframes fillJAVASCRIPT {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 90%; /* Adjust this value for HTML proficiency */
+    }
+}
+
+@keyframes fillREACT {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 85%; /* Adjust this value for CSS proficiency */
+    }
+}
+@keyframes fillSOLIDITY{
+    from {
+        width: 0%;
+    }
+    to {
+        width: 70%; /* Adjust this value for CSS proficiency */
+    }
+}
 @keyframes rotateBorder {
     0% {
         border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255);
@@ -49,7 +125,6 @@
         border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255);
     }
 }
-
 @keyframes resume-load {
     0% {
         scale: 0;
@@ -58,6 +133,7 @@
         scale: 1;
     }
 }
+
 
 @media only screen and (max-width: 800px){
     .top-nav-email{
@@ -195,5 +271,14 @@
         }
 }
 
+.skills {
 
-
+    background: black;
+    padding-left: 100px;
+    background-image: linear-gradient(to right, #101010, #020202);
+    -webkit-background-clip: text; /* For Safari */
+    -moz-background-clip: text; /* For Firefox */
+    -ms-background-clip: text; /* For some versions of Internet Explorer */
+    background-clip: text;
+    color: transparent;
+}
