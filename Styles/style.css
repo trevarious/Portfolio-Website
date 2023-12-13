@@ -64,9 +64,12 @@ h1, h2, h3, p{
     height: 100%;
     background-color: rgb(247, 246, 246);
     border-radius: 12px 12px 0 0 ;
-    border: 6px solid rgb(246, 247, 253);
+    border: 6px solid rgb(246, 253, 246);
     display: inline-flex;
     z-index: 200;
+    animation: container-load 300ms var(--load-time);
+    animation-fill-mode: forwards;
+
 }
 
 
@@ -89,7 +92,7 @@ h1, h2, h3, p{
     margin: 20px;
     animation: logo-load 300ms var(--load-time), load 300ms var(--load-time);
     animation-fill-mode: forwards;
-    transform: rotate(-180deg);
+    scale: .25;
     opacity: 0;
 
 }
@@ -110,9 +113,26 @@ h1, h2, h3, p{
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
     animation: left-nav 600ms;
     animation-fill-mode: forwards;
     transform: rotate((-360deg));
+}
+@keyframes rotateBorder {
+    0% {
+        border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
+    }
+
+    25% {
+        border-color: rgba(0, 64, 13, 0) rgb(0, 255, 102) rgba(0, 64, 13, 0)  rgba(0, 64, 13, 0);
+    }
+    50% {
+        border-color: rgba(0, 64, 13, 0) rgba(0, 64, 13, 0)  rgb(0, 255, 102) rgba(0, 64, 13, 0);
+    }
+    75% {
+        border-color: rgba(0, 64, 13, 0) rgba(0, 64, 13, 0)  rgba(0, 64, 13, 0) rgb(0, 255, 102);
+    } 
 }
 .social-links{
     display: flex;
@@ -121,6 +141,26 @@ h1, h2, h3, p{
     transition: scale .05s ease;
     border: none;
     opacity: .95;
+
+}
+
+#left-nav-one {
+    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
+    animation: left-nav 600ms, rotateBorder 600ms linear infinite;
+    animation-fill-mode: forwards;
+    transform: rotate((-360deg));
+}
+#left-nav-two {
+    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
+    animation: left-nav 450ms, rotateBorder 600ms linear infinite var(--load-time);
+    animation-fill-mode: forwards;
+    transform: rotate((-360deg));
+}
+#left-nav-three {
+    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
+    animation: left-nav 300ms, rotateBorder 600ms linear infinite calc(var(--load-time) + 150ms);
+    animation-fill-mode: forwards;
+    transform: rotate((-360deg));
 
 }
 
@@ -240,10 +280,46 @@ h1, h2, h3, p{
     color: rgb(70, 70, 70);
 
 }
-.trevor{
+#circle {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 5px solid rgba(0, 255, 102, .20);
+    right: 68%;
+    top: 29%;
+    background: rgba(0, 255, 102, .25);
+
+}
+.trevor {
     animation: first-name-slide 450ms var(--load-time);
     animation-fill-mode: forwards;
     transform: translateX(20px);
+    z-index: 10;
+}
+#t {
+    position: relative;
+    right: 57%;
+    top: -115px;
+    animation: t-load 600ms ease-in calc(var(--load-time) + 600ms);
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes t-load {
+    0% {
+        right: 57%;
+        top: -115px;
+        opacity: 0;
+    }
+    50% {
+        right: -3%;
+        top: 3px;
+        opacity: .5;
+    }
+    100% {
+        right: 0;
+        top: 0;
+        opacity: 1;
+    }
 }
 .sykes{
     margin-left: 50px;
@@ -251,6 +327,7 @@ h1, h2, h3, p{
     animation: last-name-slide 450ms var(--load-time);
     animation-fill-mode: forwards;
     transform: translateX(-20px);
+
 }
 .content h2{
     margin: 0 0 30px 125px;
@@ -269,8 +346,10 @@ h1, h2, h3, p{
     max-width: 350px;
     font-size: var(--subtext-font-size);
     font-family: var(--subtext-font);
+    font-weight: 400;
     letter-spacing: 1px;
-    margin-bottom: 25px;
+    line-height: 1.5;
+    margin-bottom: 50px;
     color: rgb(0, 0, 0);
 
     animation: subhead-load 300ms calc(var(--load-time) + 300ms);
@@ -290,6 +369,57 @@ h1, h2, h3, p{
     color: transparent;
 }
 
+.skills-text {
+    background: linear-gradient(rgb(247, 246, 246) 50%, rgba(0, 255, 102, .5));
+
+    
+}
+.skills-text:hover {
+    animation: skills-text-hover 50ms ease;
+    animation-fill-mode: forwards;
+    background: linear-gradient(rgb(247, 246, 246) 50%, rgba(0, 255, 102, .5));
+    cursor: pointer;
+}
+.skills-text:left{
+    animation: none;
+}
+@keyframes skills-text-hover {
+    0%{
+        background: linear-gradient(rgb(247, 246, 246) 50%, rgba(0, 255, 102, .5));
+    }
+    25% {
+        background: linear-gradient(rgb(247, 246, 246) 45%, rgba(0, 255, 102, 0.55));
+    }
+    50%{
+        background: linear-gradient(rgb(247, 246, 246) 30%, rgba(0, 255, 102, .70));
+    }
+    75%{
+        background: linear-gradient(rgb(247, 246, 246) 15%, rgba(0, 255, 102, .85));
+    }
+    100%{
+        background: linear-gradient(rgb(247, 246, 246) 0.001%, rgba(0, 255, 102, 1));
+        color: black
+    }
+}
+@keyframes skills-load {
+    0%{
+        background: linear-gradient(white 100%, rgba(0, 255, 102, 0));
+    }
+    25% {
+        background: linear-gradient(white 85%, rgba(0, 255, 102, 0.15));
+    }
+    50%{
+        background: linear-gradient(white 70%, rgba(0, 255, 102, .30));
+    }
+    75%{
+        background: linear-gradient(white 55%, rgba(0, 255, 102, .45));
+    }
+    100%{
+        background: linear-gradient(white 50%, rgba(0, 255, 102, .5));
+        color: black
+    }
+}
+
 .stack-container{
     border: none;
     display: flex;
@@ -298,7 +428,12 @@ h1, h2, h3, p{
     align-items: center;
     padding: 0;
     margin: 0;
-    cursor: default
+    cursor: default;
+    background: rgb(137, 137, 137);
+    height: 50px;
+    max-width: 425px;
+    margin-left: 75px;
+    border-radius: 12px 12px 0 0 ;
 
 }
 .stack {
@@ -308,15 +443,10 @@ h1, h2, h3, p{
     width: 75px;
     height: 75px;
     margin: 0 10px 0 0;
-    background: radial-gradient(rgb(255, 255, 255) 50%,rgb(187, 187, 187));
     border-radius: 50%;
-    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.25);
     letter-spacing: -.5px;
     font-weight: 700;
-    background-image: linear-gradient(to right, #0091ff, #0084ff); /* Replace these colors with your desired gradient */
-    -webkit-background-clip: text; /* For Safari */
-    background-clip: text;
-    color: transparent;
+    color: white;
 
 }
 .one{
@@ -324,11 +454,13 @@ h1, h2, h3, p{
     animation-fill-mode: forwards;
     transform: translateY(-30px);
 
+
 }
 .two{
     animation: stack-load 300ms ease-in calc(var(--load-time) + 300ms);
     animation-fill-mode: forwards;
     transform: translateY(-30px);
+
 
 }
 
@@ -337,16 +469,19 @@ h1, h2, h3, p{
     animation-fill-mode: forwards;
     transform: translateY(-30px);
 
+
 }
 .four{
     animation: stack-load 300ms ease-in calc(var(--load-time) + 600ms);
     animation-fill-mode: forwards;
     transform: translateY(-30px);
+
 }
 .five{
     animation: stack-load 300ms ease-in calc(var(--load-time) + 750ms);
     animation-fill-mode: forwards;
     transform: translateY(-30px);
+
 }
 
 .stack:last-child{
@@ -379,74 +514,6 @@ h1, h2, h3, p{
 
 }
 
-#contact-form {
-    background: rgb(53, 53, 53);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
-    position: absolute;
-    color: white;
-}
-
-#contact-form label,
-#contact-form button {
-    color: white;
-}
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
-    background: rgb(0, 120, 120);
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 0;
-    width: 100%;
-}
-
-#contact-form button {
-    background: rgb(255, 162, 139);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#contact-form button:hover {
-    background: rgb(255, 0, 0);
-    color: rgb(255, 255, 255);
-}
-
-#confirmation-message {
-    background: rgb(53, 53, 53);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
-    position: absolute;
-    color: white;
-}
-
-#confirmation-message p {
-    color: white;
-}
-
-#confirmation-message button {
-    background: rgb(0, 255, 255);
-    color: rgb(255, 73, 73);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#confirmation-message button:hover {
-    background: white;
-    color: rgb(0, 255, 255);
-}
 
 .works{
     animation: content-scale 300ms ease-out calc(var(--load-time));
@@ -479,6 +546,7 @@ h1, h2, h3, p{
 
     .left-nav-social-links {
         margin-bottom: 20px;
+
     }
 
     .top-nav {
@@ -536,13 +604,7 @@ h1, h2, h3, p{
         flex-direction: column;
     }
 
-    #contact-form,
-    #confirmation-message {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        left: 0;
-    }
+
 }
 
 @media only screen and (max-width: 1210px){
@@ -728,11 +790,11 @@ h1, h2, h3, p{
 
 @keyframes logo-load {
     0% {
-        transform: rotate(-180deg);
+        scale: .25;
     }
 
     100% {
-        transform: rotate(0);
+        scale: 1;
     }
 }
 
@@ -832,6 +894,15 @@ h1, h2, h3, p{
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes container-load {
+    0% {
+        border: 6px solid rgb(76, 76, 76);
+    }
+    100% {
+            border: 6px solid  rgb(247, 246, 246); 
     }
 }
 

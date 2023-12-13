@@ -6,7 +6,7 @@ workItems.forEach((item, index) => {
         productDescriptions[index].classList.add('active');
     });
 
-    item.addEventListener('mouseleave', () => {
-        productDescriptions[index].classList.remove('active');
-    });
+    // item.addEventListener('mouseleave', () => {
+    //     productDescriptions[index].classList.remove('active');
+    // });
 });

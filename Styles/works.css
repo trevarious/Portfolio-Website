@@ -5,116 +5,195 @@
 
 
 
-.content-flex {
+.works-content-flex {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-right: 100px;
 
 }
-
-
-.content {
-    flex:1; 
-   margin-bottom: 500px;
-
-
-}
-.project {
-    animation: project-load 750ms ;
+.works-content {
+    flex: 1; /* Takes up remaining space */
+    justify-content: center;
+    align-items: center;
+    animation: load 300ms ease-in-out calc(var(--load-time));
     animation-fill-mode: forwards;
-    transform: translateX(-20px);
+    opacity: 0;
+
+}
+.works-content h1{
+    flex:1;
+    margin: 25px 0 0 100px;
+    font-family: var(--header-font);
+    font-size: var(--header-font-size);
+    max-width: 300px;
+    color: rgb(70, 70, 70);
+}
+.works-content h2{
+    margin: 0 0 30px 125px;
+    max-width: 300px;
+    color: rgb(119, 119, 119);
+    font-family: var(--subtext-font);
+    font-size: var(--subtext-font-size);
+
+    animation: subhead-load 300ms calc(var(--load-time) + 150ms);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.works-content p{
+    margin: 0 0 0 125px;
+    max-width: 350px;
+    font-size: var(--subtext-font-size);
+    font-family: var(--subtext-font);
+    letter-spacing: 1px;
+    margin-bottom: 100px;
+    animation: subhead-load 300ms calc(var(--load-time) + 300ms);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+p {
+    color: black;
+}
+
+
+.project {
+    margin: 0;
+    padding: 0;
 }
 
 .works {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    overflow: auto; /* Add overflow to enable scrolling if needed */
-    max-height: 500px;
     border-radius: 3%;
    background: transparent;
+   padding: 0;
+
 }
+
 
 
 .work-item {
     justify-content: center;
     align-items: center;
     flex: 1;
-    min-width: 300px;
+    min-width: 100px;
     position: relative;
-    margin: 5px;
     overflow: hidden;
     background: rgb(224, 224, 224);
-    border: 2px solid transparent;
+    border: 2px solid rgb(107, 107, 107);
     transition: border-color .25s ease;
     border-radius: 3%;
-    padding: 10px 0 10px 0;
+    padding: 0;
     cursor: pointer;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, .2);
+    border: 3px solid transparent;
+    
 }
 
 .work-item a {
     display: block;
     position: relative;
     z-index: 1;
+    padding: 0;
+
 }
 
 .works img {
     width: 100%;
+    border-bottom: 3px solid rgb(59, 59, 59);
+    border-top: 3px solid rgb(107, 107, 107);
 }
 
 .work-item:hover {
-    animation: rotateBorder 2s linear infinite .05s; /* Add a 2s delay to the animation */
-    border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255); /* Set the final border color here */
+    animation: rotateBorder 900ms linear infinite; /* Add a 2s delay to the animation */
+    animation-fill-mode: forwards;
+    border: 3px solid transparent;
+    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
     scale: 1.01
 }
 
 .works a{
     text-decoration: none;
     color: grey;
+    margin: 5px;
+    padding: 0;
+}
+.project-title {
+    color: black;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 .project-description {
     text-decoration: none;
-    background-color: #eee;
-    padding: 10px;
-    visibility: hidden; /* Initially hide the project descriptions */
-    transition: visibility .1s ease;
+    background: radial-gradient(rgb(255, 255, 255) 50%, rgb(231, 231, 231));
+    color: black;
     border-radius: 3%;
     cursor: pointer;
-
+    border-top: 3px solid rgb(103, 103, 103);
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
 }
 
-.project-description.active {
-    visibility: visible; /* Show the project description when the 'active' class is applied */
-    cursor: pointer;
+#one{
+    scale: 0;
+    animation: project-load 600ms calc(var(--load-time) + 300ms) ;
+    animation-fill-mode: forwards;
+    margin: 0;
+    padding: 0;
+}
+
+#two{ 
+    scale: 0;
+    animation: project-load 600ms calc(var(--load-time) + 450ms);
+    animation-fill-mode: forwards;
+    margin: 0;
+    padding: 0;
+}
+
+#three{
+    scale: 0;
+    animation: project-load 600ms calc(var(--load-time) + 600ms);
+    animation-fill-mode: forwards;
+    margin: 0;
+    padding: 0;
+}
+#four{
+    scale: 0;
+    animation: project-load 600ms calc(var(--load-time) + 750ms);
+    animation-fill-mode: forwards;
+    margin: 0;
+    padding: 0;
 }
 
 
 /* Add a rotating border to the work items */   
 @keyframes rotateBorder {
     0% {
-        border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255);
+        border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
     }
+
     25% {
-        border-color: rgba(255, 0, 0, 0.75) rgba(255, 0, 255, 0.75) rgba(0, 255, 255, 0.75) rgba(255, 0, 0, 0.75);
+        border-color: rgba(0, 64, 13, 0) rgb(0, 255, 102) rgba(0, 64, 13, 0)  rgba(0, 64, 13, 0);
     }
     50% {
-        border-color: rgba(0, 255, 255, 0.5) rgba(255, 0, 0, 0.5) rgb(255, 0, 255, 0.75) rgba(0, 255, 255, 0.5);
+        border-color: rgba(0, 64, 13, 0) rgba(0, 64, 13, 0)  rgb(0, 255, 102) rgba(0, 64, 13, 0);
     }
     75% {
-        border-color: rgba(255, 0, 0, 0.75) rgba(225, 0, 255, 0.75) rgba(0, 255, 255, 0.75) rgba(255, 0, 0, 0.75);
-    }
-    100% {
-        border-color: rgb(0, 255, 255) rgb(255, 0, 0) rgb(255, 0, 0) rgb(0, 255, 255);
-    }
+        border-color: rgba(0, 64, 13, 0) rgba(0, 64, 13, 0)  rgba(0, 64, 13, 0) rgb(0, 255, 102);
+    } 
 }
-
 @keyframes project-load {
     0% {
-        transform: translateX(-20px);
+        scale: 0;
     }
     100% {
-        transform: translateX(0px);
+        scale: 1;
     }
 
 }
