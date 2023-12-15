@@ -1,0 +1,35 @@
+Commit Message Conventions
+
+Subject Line:
+- Keep it concise (around 50 characters).
+- Use imperative mood: "feat: Add new feature" not "Added new feature".
+- Capitalize the first letter.
+- Do not end the subject line with a period.
+
+Body:
+- Optional; explain the "what" and "why" of the changes in more detail.
+- Wrap lines at around 72 characters.
+- Provide context and reasoning behind the changes.
+
+Prefixes:
+- feat: A new feature for the user, not a new feature for a build script.
+- fix: A bug fix for the user, not a fix to a build script.
+- docs: Documentation changes.
+- style: Changes that do not affect the meaning of the code (white-space, formatting, etc).
+- refactor: A code change that neither fixes a bug nor adds a feature.
+- test: Adding missing tests or correcting existing tests.
+- chore: Changes to the build process, auxiliary tools, or libraries.
+
+Example:
+
+feat: Implement user authentication
+
+- Created login and registration functionality.
+- Used bcrypt for password hashing.
+- Implemented token-based authentication for API calls.
+- Closes: #123 (optional)
+
+Remember:
+- Use clear and descriptive language.
+- Separate subject from body with a blank line.
+- Reference issues, if applicable, in the footer.

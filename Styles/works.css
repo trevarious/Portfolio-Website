@@ -144,31 +144,25 @@ p {
     scale: 0;
     animation: project-load 600ms calc(var(--load-time) + 300ms) ;
     animation-fill-mode: forwards;
-    margin: 0;
-    padding: 0;
+
 }
 
 #two{ 
     scale: 0;
     animation: project-load 600ms calc(var(--load-time) + 450ms);
     animation-fill-mode: forwards;
-    margin: 0;
-    padding: 0;
+
 }
 
 #three{
     scale: 0;
     animation: project-load 600ms calc(var(--load-time) + 600ms);
     animation-fill-mode: forwards;
-    margin: 0;
-    padding: 0;
 }
 #four{
     scale: 0;
     animation: project-load 600ms calc(var(--load-time) + 750ms);
     animation-fill-mode: forwards;
-    margin: 0;
-    padding: 0;
 }
 
 
