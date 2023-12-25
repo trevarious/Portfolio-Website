@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/resume.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <title>Trevor Sykes | Skills</title>
+</head>
+<body>
+
+    <div class="shell">
+    <div id="container" class="container">
+        <div class="left-nav">
+            <a id='logo' href="#" target="#"><img  src="../assets/logo.png" alt="logo" width="50px"></a>
+            <div class="left-nav-social-links">
+            <div id="left-nav-one" class="left-nav-link-container"><a href="https://www.linkedin.com/in/trevor-sykes-717585136/" target="_blank"><img class="social-links" src="../assets/linkedin.png" alt=""></a></div>
+            <div id="left-nav-two" class="left-nav-link-container"><a href="https://github.com/trevarious" target="_blank"><img class="social-links" src="../assets/git-link.png" alt=""></a></div>
+            <div id="left-nav-three" class="left-nav-link-container"><a href="https://instagram.com"><img class="social-links" src="../assets/insta-link-logo.png" alt=""></a></div>
+            </div>
+        </div>
+        <div class="main-content">
+        <div class="top-nav">
+            <div class="top-nav-left">
+                <a href='mailto:trevorjacobsykes@gmail.com'>
+                    <img id="nav-email-icon" class="top-nav-link" src="../assets/email-logo.png" alt="Email Logo">
+                </a>
+                <h3 id='nav-email-text' class="top-nav-email">trevorjacobsykes@gmail.com</h3>
+                <a id="night-mode-toggle">
+                    <img class="top-nav-link" src="../assets/toggle-logo.png" alt="Toggle Logo">
+                </a>
+            </div>
+            
+            <div class="top-nav-right">
+                <ul>
+                    <li id="works">
+                        <a class="top-nav-link" href="../src/works.html" target="_self"><img class="top-nav-link" src="../assets/projects-link-logo.png" alt=""></a>
+                        <h3 id="works-text" class="top-nav-text">Works</h3>
+                        <div class="border"></div>
+                    </li>
+                    <li id="resume">
+                        <a class="top-nav-link" href="#" target="_self"><img class="top-nav-link" src="../assets/resume-link-logo.png" alt=""></a>
+                        <h3 id="skills-text" class="top-nav-text active-link">Skills</h3>
+                        <div class="border"></div>
+                    </li>
+                    <li id="home">
+                        <a class="top-nav-link" href="../index.html" target="_self"><img class="top-nav-link" src="../assets/home-link-logo.png" alt=""></a>
+                        <h3 id="home-text" class="top-nav-text">Home</h3>
+                        <div class="border"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-resume">
+            <div class="content-left">
+        <h2 class="skills">My Skills</h2>
+        <div class="skill-bars">
+            <div class="skill">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" id="htmlProgress"></div>
+                </div>
+                <div class="skill-level">95%</div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" id="cssProgress"></div>
+                </div>
+                <div class="skill-level">95%</div>
+            </div>
+            <!-- Other skills can be added similarly -->
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" id="javaScriptProgress"></div>
+                </div>
+                <div class="skill-level">90%</div>
+            </div>
+            <!-- <div class="skill">
+                <div class="skill-name">React</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" id="reactProgress"></div>
+                </div>
+                <div class="skill-level">85%</div>
+            </div> -->
+            <div class="skill">
+                <div class="skill-name">Solidity</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" id="solidityProgress"></div>
+                </div>
+                <div class="skill-level">70%</div>
+            </div>
+        </div>
+        </div>
+        <div class="content-right">
+            <div class="skill-description">
+            <h2>HTML</h2>
+            <p>
+                HTML5. skills include: Canvas, semantic elements, charts and much more.</p>
+            </div>
+            <div class="skill-description">
+            <h2>CSS</h2>
+            <p>
+                Building responsive layouts fit for any screen size. I am familiar with framworks such as Tailwind
+                although I prefer to use standard SASSY CSS.
+            </p>
+            </div>
+            <div class="skill-description">
+            <h2>JavaScript</h2>
+            <p>
+                ES6 syntax as well as ES8. Asynchronous operations, API calls with async/await, leveraging the latest data structures such as
+                Map and Set, and ability to easily manipulate the DOM and any complex data structure.
+
+            </p>
+            </div>
+            <!-- <div class="skill-description">
+            <h2>React</h2>
+            <p>React </p>
+            </div> -->
+            <div class="skill-description">
+            <h2>Solidity</h2>
+            <p>
+                Full deployment process using environments like Remix, Hardhat. Deploy with ethers and web3. Familiar
+                with interacting with contracts using web3.js and node to build front end user interfaces.
+            </p>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script src="../Scripts/script.js" ></script>
+    <script src="../Scripts/topNav.js"></script>
+</body>
+</html>

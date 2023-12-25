@@ -83,13 +83,12 @@ p {
     min-width: 100px;
     position: relative;
     overflow: hidden;
-    background: rgb(224, 224, 224);
-    border: 2px solid rgb(107, 107, 107);
+    background: rgb(237, 237, 237);
     transition: border-color .25s ease;
     border-radius: 3%;
     padding: 0;
     cursor: pointer;
-    box-shadow: 0 4px 1px rgba(0, 0, 0, .2);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, .2);
     border: 3px solid transparent;
     
 }
@@ -104,29 +103,29 @@ p {
 
 .works img {
     width: 100%;
-    border-bottom: 3px solid rgb(59, 59, 59);
-    border-top: 3px solid rgb(107, 107, 107);
+    border-bottom: 3px solid rgb(130, 130, 130);
+    border-top: 3px solid rgb(130, 130, 130);
 }
 
 .work-item:hover {
     animation: rotateBorder 900ms linear infinite; /* Add a 2s delay to the animation */
     animation-fill-mode: forwards;
     border: 3px solid transparent;
-    border-color: rgb(0, 255, 102) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0) rgba(0, 64, 13, 0);
+    border-color: rgb(0, 255, 102) rgba(0, 164, 13, 0.3) rgba(0, 164, 13, 0.3) rgba(0, 164, 13, 0.3);
     scale: 1.01
 }
 
 .works a{
     text-decoration: none;
-    color: grey;
     margin: 5px;
     padding: 0;
 }
 .project-title {
-    color: black;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 0;
     margin: 0;
+    font-size: 25px;
 }
 .project-description {
     text-decoration: none;
@@ -134,8 +133,8 @@ p {
     color: black;
     border-radius: 3%;
     cursor: pointer;
-    border-top: 3px solid rgb(103, 103, 103);
-    padding: 0;
+    border-top: 3px solid rgb(255, 255, 255);
+    padding: 10px;
     margin: 0;
     font-size: 1.2rem;
 }

@@ -50,6 +50,9 @@ li{
 h1, h2, h3, p{
     cursor: default;
 }
+.active-link {
+    color: rgb(0, 205, 52);
+}
 
 .shell{
     padding: calc(50px - 1vh) calc(100px - 1vh);
@@ -205,20 +208,34 @@ h1, h2, h3, p{
     letter-spacing: -1px;
     flex-wrap: wrap;
 }
+#nav-email-text {
+    transition: color 150ms ease-in-out;
+}
 #works{
-    animation: top-right-nav-load 300ms calc(var(--load-time));
+    animation: top-right-nav-load 300ms calc(var(--load-time) + 37ms);
     animation-fill-mode: forwards;
-    transform: translateY(-10%);
+    transform: translateX(-10%);
+}
+#works-text {
+    transition: color 150ms ease-in-out;
+
 }
 #resume{
-    animation: top-right-nav-load 300ms calc(var(--load-time) + 150ms);
+    animation: top-right-nav-load 300ms calc(var(--load-time) + 75ms);
     animation-fill-mode: forwards;
-    transform: translateY(-10%);
+    transform: translateX(-10%);
+}
+#skill-text {
+    transition: color 150ms ease-in-out;
+  
 }
 #home{
-    animation: top-right-nav-load 300ms calc(var(--load-time) + 300ms);
+    animation: top-right-nav-load 300ms calc(var(--load-time) + 150ms);
     animation-fill-mode: forwards;
-    transform: translateY(-10%);
+    transform: translateX(-10%);
+}
+#home-text {
+    transition: color 150ms ease-in-out;
 }
 .top-nav-right h3{
     cursor: default;
@@ -291,31 +308,7 @@ h1, h2, h3, p{
     transform: translateX(20px);
     z-index: 10;
 }
-#t {
-    position: relative;
-    right: 57%;
-    top: -115px;
-    animation: t-load 600ms ease-in calc(var(--load-time) + 600ms);
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-@keyframes t-load {
-    0% {
-        right: 57%;
-        top: -115px;
-        opacity: 0;
-    }
-    50% {
-        right: -3%;
-        top: 3px;
-        opacity: .5;
-    }
-    100% {
-        right: 0;
-        top: 0;
-        opacity: 1;
-    }
-}
+
 .sykes{
     margin-left: 50px;
     margin-bottom: 25px;
@@ -356,9 +349,8 @@ h1, h2, h3, p{
 
 .skills-text {
     background: linear-gradient(rgb(247, 246, 246) 50%, rgba(0, 255, 102, .5));
-
-    
 }
+
 .skills-text:hover {
     animation: skills-text-hover 50ms ease;
     animation-fill-mode: forwards;
@@ -747,10 +739,10 @@ h1, h2, h3, p{
 
 @keyframes top-right-nav-load {
     0% {
-        transform: translateY(-10%);
+        transform: translateX(-10%);
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 @keyframes top-left-nav-load {
@@ -766,7 +758,7 @@ h1, h2, h3, p{
 }
 @keyframes left-nav {
     0% {
-        transform: rotate(-360deg);
+        transform: rotate(10deg);
     }
 
     100% {

@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/style.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 
     <title>Trevor Sykes | Digital Creator</title>
 </head>
 <body>
-
     <div class="shell">
     <div id="container" class="container">
         <div class="left-nav">
-            <a id='logo' href="#" target="#"><img  src="assets/logo-no-background.png" alt="logo"></a>
+            <a id='logo' href="#" target="#"><img  src="assets/logo.png" alt="logo" width="50px"></a>
             <div class="left-nav-social-links">
             <div id="left-nav-one" class="left-nav-link-container"><a href="https://www.linkedin.com/in/trevor-sykes-717585136/" target="_blank"><img class="social-links" src="assets/linkedin.png" alt=""></a></div>
             <div id="left-nav-two" class="left-nav-link-container"><a href="https://github.com/trevarious" target="_blank"><img class="social-links" src="assets/git-link.png" alt=""></a></div>
@@ -24,9 +23,9 @@
         <div class="top-nav">
             <div class="top-nav-left">
                 <a href='mailto:trevorjacobsykes@gmail.com'>
-                    <img class="top-nav-link" src="assets/email-logo.png" alt="Email Logo">
+                    <img id="nav-email-icon" class="top-nav-link" src="assets/email-logo.png" alt="Email Logo">
                 </a>
-                <h3 class="top-nav-email">trevorjacobsykes@gmail.com</h3>
+                <h3 id='nav-email-text' class="top-nav-email">trevorjacobsykes@gmail.com</h3>
                 <a id="night-mode-toggle">
                     <img class="top-nav-link" src="assets/toggle-logo.png" alt="Toggle Logo">
                 </a>
@@ -36,18 +35,18 @@
             <div class="top-nav-right">
             <ul>
                 <li id="works">
-                    <a href="works.html" target="_self"><img class="top-nav-link" src="assets/projects-link-logo.png" alt=""></a>
-                    <h3 class="top-nav-text">Works</h3>
+                    <a class="top-nav-link" href="src/works.html" target="_self"><img class="top-nav-link" src="assets/projects-link-logo.png" alt=""></a>
+                    <h3 id="works-text" class="top-nav-text">Works</h3>
                     <div class="border"></div>
                 </li>
                 <li id="resume">
-                    <a href="resume.html" target="_self"><img class="top-nav-link" src="assets/resume-link-logo.png" alt=""></a>
-                    <h3 class="top-nav-text">Skills</h3>
+                    <a class="top-nav-link" href="src/resume.html" target="_self"><img class="top-nav-link" src="assets/resume-link-logo.png" alt=""></a>
+                    <h3 id="skill-text" class="top-nav-text">Skills</h3>
                     <div class="border"></div>
                 </li>
                 <li id="home">
-                    <a href="#" target="_self"><img class="top-nav-link" src="assets/home-link-logo.png" alt=""></a>
-                    <h3 class="top-nav-text">Home</h3>
+                    <a class="top-nav-link" href="#" target="_self"><img class="top-nav-link" src="assets/home-link-logo.png" alt=""></a>
+                    <h3 id="home-text" class="top-nav-text active-link">Home</h3>
                     <div class="border"></div>
                 </li>
             </ul>
@@ -71,5 +70,138 @@
         </div>
         </div>
     </div>
+    <script src="Scripts/topNav.js"></script>
+    <script>
+        const canvas = document.getElementById("life");
+        const context = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const draw = (x, y, c, r) => {
+            context.fillStyle = c;
+            context.beginPath();
+            context.arc(x, y, r, 0, Math.PI * 2);
+            context.fill();
+        };
+        
+        const particles = [];
+        class Particle {
+            constructor(x, y, c, r) {
+                this.x = x;
+                this.y = y;
+                this.vx = 0;
+                this.vy = 0;
+                this.color = c;
+                this.radius = r;
+            }
+        }
+        
+        const randomCentered = () => {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const distance = Math.random() * (canvas.width / 4);
+            const angle = Math.random() * Math.PI * 2;
+            const x = centerX + distance * Math.cos(angle);
+            const y = centerY + distance * Math.sin(angle);
+            return { x, y };
+        };
+        
+        const createCentered = (number, color, radius) => {
+            const group = [];
+            for (let i = 0; i < number; i++) {
+                const position = randomCentered();
+                group.push(new Particle(position.x, position.y, color, radius));
+                particles.push(group[i]);
+            }
+            return group;
+        };
+        
+        const rule = (particles1, particles2, g) => {
+            for (let i = 0; i < particles1.length; i++) {
+                let fx = 0;
+                let fy = 0;
+                const a = particles1[i];
+                for (let j = 0; j < particles2.length; j++) {
+                    const b = particles2[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d > 0) {
+                        const F = g * 1 / d;
+                        fx += (F * dx);
+                        fy += (F * dy);
+                    }
+                }
+                a.vx = (a.vx + fx) * 0.5;
+                a.vy = (a.vy + fy) * 0.5;
+                a.x += a.vx;
+                a.y += a.vy;
+        
+                if (a.x <= 0 || a.x >= canvas.width) {
+                    a.vx *= -1;
+                }
+                if (a.y <= 0 || a.y >= canvas.height) {
+                    a.vy *= -1;
+                }
+            }
+        };
+        
+        
+        
+        const toggleButton = document.getElementById("toggleButton");
+        toggleButton.addEventListener("click", () => {
+            bounceOffWalls = !bounceOffWalls;
+        });
+        
+        // Create quark particles
+        const upQuarkParticles = createCentered(500, "red", 1.5);
+        const downQuarkParticles = createCentered(500, "blue", 1.5);
+        const strangeQuarkParticles = createCentered(500, "green", 2);
+        const gluonParticles = createCentered(1000, "white", 1);
+        
+        
+        
+        const centerAttractionForce = .0;
+        
+        const update = () => {
+        // Interaction rules for quarks
+        rule(upQuarkParticles, upQuarkParticles, 0.05);
+        rule(downQuarkParticles, downQuarkParticles, 0.05);
+        rule(strangeQuarkParticles, strangeQuarkParticles, 0.05);
+        
+        // rule(upQuarkParticles, downQuarkParticles, -0.05);
+        // rule(downQuarkParticles, strangeQuarkParticles, -0.05);
+        // rule(strangeQuarkParticles, upQuarkParticles, -0.05);
+        
+        rule(upQuarkParticles, gluonParticles, -0.05);
+        rule(downQuarkParticles, gluonParticles, -0.05);
+        rule(strangeQuarkParticles, gluonParticles, -0.05);
+        
+        rule(gluonParticles,upQuarkParticles , -.5);
+        rule(gluonParticles,downQuarkParticles , -.5);
+        rule(gluonParticles, strangeQuarkParticles , -.5);
+        
+        rule(gluonParticles, gluonParticles, -.5);
+        
+        
+        
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        
+            for (let i = 0; i < particles.length; i++) {
+                const particle = particles[i];
+                draw(particle.x, particle.y, particle.color, particle.radius);
+        
+                const distanceToCenterX = canvas.width / 2 - particle.x;
+                const distanceToCenterY = canvas.height / 2 - particle.y;
+                particle.vx += centerAttractionForce * distanceToCenterX;
+                particle.vy += centerAttractionForce * distanceToCenterY;
+            }
+        
+            requestAnimationFrame(update);
+        };
+        
+        update();
+        
+            </script>
 </body>
 </html>
